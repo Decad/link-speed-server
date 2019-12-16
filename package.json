@@ -1,0 +1,15 @@
+{
+  "name": "link-speed-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "node_modules/.bin/cloudworker src/server/index.js",
+  },
+  "author": "Declan Cook",
+  "license": "MIT",
+  "dependencies": {
+    "@dollarshaveclub/cloudworker": "^0.1.2"
+  },
+  "devDependencies": {}
+}
