@@ -2,9 +2,9 @@
   "name": "link-speed-server",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node_modules/.bin/cloudworker src/server/index.js",
+    "start": "node_modules/.bin/cloudworker src/server/index.js"
   },
   "author": "Declan Cook",
   "license": "MIT",

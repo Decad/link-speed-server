@@ -1,10 +1,10 @@
-const Router = require('./router');
+import Router from './router';
 
 const downloadHeaders =
 {
     'Content-Description': 'File Transfer',
     'Content-Type': 'application/octet-stream',
-    'Content-Disposition': 'attachment; filename=empty.dat',
+    'Content-Disposition': 'attachment; filename=data.dat',
     'Content-Transfer-Encoding': 'binary',
     'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
     'Cache-Control': 'post-check=0, pre-check=0',
@@ -30,7 +30,7 @@ async function blob(request) {
     const url = new URL(request.url);
     const size = Number(url.pathname.match(blobRegex)[1]);
 
-    var data = new Uint32Array(Math.max(Math.min(5000000, size), 0));
+    var data = new Uint32Array(Math.max(Math.min(5000000, size / Uint32Array.BYTES_PER_ELEMENT), 0));
     return new Response(data, init);
 }
 
