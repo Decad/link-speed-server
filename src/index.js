@@ -30,7 +30,7 @@ async function blob(request) {
     const url = new URL(request.url);
     const size = Number(url.pathname.match(blobRegex)[1]);
 
-    var data = new Uint32Array(Math.max(Math.min(5000000, size / Uint32Array.BYTES_PER_ELEMENT), 0));
+    var data = new Uint8Array(Math.max(Math.min(104857600, size / Uint8Array.BYTES_PER_ELEMENT), 0));
     return new Response(data, init);
 }
 
