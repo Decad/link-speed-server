@@ -41,6 +41,7 @@ async function upload(request) {
 
 async function handleRequest(request) {
     const r = new Router();
+    r.get('/', () => Response.redirect('https://www.github.com/Decad/link-speed', 302))
     r.get('/empty', empty);
     r.post('/upload', upload);
     r.get(blobRegex, blob);
