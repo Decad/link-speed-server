@@ -34,10 +34,15 @@ async function blob(request) {
     return new Response(data, init);
 }
 
+async function upload(request) {
+    const body = await request.blob();
+    return new Response({});
+}
 
 async function handleRequest(request) {
     const r = new Router();
     r.get('/empty', empty);
+    r.post('/upload', upload);
     r.get(blobRegex, blob);
     return await r.route(request);
 }
